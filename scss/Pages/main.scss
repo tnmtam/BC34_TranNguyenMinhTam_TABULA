@@ -39,6 +39,7 @@ header {
       overflow: hidden;
       width: 25%;
       display: flex;
+      justify-content: space-between;
       flex-direction: row;
       align-items: center;
       transform: translateX(-50px);
@@ -260,11 +261,6 @@ header {
               .icon {
                 @include icon($icon-cl-primary, $txt-sz-xs);
               }
-              #subject {
-                select {
-                  border: none;
-                }
-              }
             }
             .message-area {
               border: 1px solid rgba(0, 0, 0, 0.1);
@@ -337,8 +333,7 @@ header {
               }
             }
             .link {
-              width: 75%;
-
+              width: 20%;
               padding-bottom: 10px;
               margin-bottom: 10px;
               border-bottom: 1px solid #990171;
