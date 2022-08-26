@@ -1,0 +1,66 @@
+// Font-weight
+$txt-fw-thin: 100;
+$txt-fw-light:300;
+$txt-fw-medium:500;
+$txt-fw-semiBold:600;
+$txt-fw-bold:700;
+//Color
+//background
+$bg-color-1: #dcd1f3;
+$bg-color-2:#fff;
+$bg-color-3:#aa017e;
+//--text
+$text-cl-primary: #181818;
+$text-cl-secondary: #b61984;
+$text-cl-light: #fff;
+$text-cl-hover-1: #dcd1f3;
+$text-placeholer-1:#dcd1f3;
+//--button
+$btn-bg-1: #b61984;
+$btn-bg-2: #fff;
+$btn-bg-3:#aa017e;
+$border-cl-1: #b61984;
+$border-cl-2: #fff;
+//icon
+$icon-cl-primary:#b61984;
+//Size
+//text
+$txt-sz-xs: 11px;
+$txt-sz-sm: 13px;
+$txt-sz-base: 16px;
+$txt-sz-md: 23px;
+$txt-sz-l: 37px;
+$txt-sz-xl: 57px;
+
+// mixin
+@mixin text($fz, $fw, $c) {
+  font-size: $fz;
+  font-weight: $fw;
+  color: $c;
+}
+@mixin button($bg, $pd, $b, $br, $fs, $fw, $c, $bg-hover, $c-hover,$bd-hover:1px solid $border-cl-1) {
+  background: $bg;
+  padding: $pd;
+  border: $b;
+  border-radius: $br;
+  cursor: pointer;
+  font-size: $fs;
+  font-weight: $fw;
+  color: $c;
+  &:hover {
+    background: $bg-hover;
+    color: $c-hover;
+    border: $bd-hover;
+  }
+}
+@mixin input($bd,$pd,$ol-focus){
+  border: $bd;
+  padding: $pd;
+  &:focus{
+    outline: $ol-focus;
+  }
+}
+@mixin icon($c,$fz){
+  color: $c;
+  font-size: $fz;
+}

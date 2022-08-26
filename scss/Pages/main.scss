@@ -1,0 +1,430 @@
+@import "../Base/base";
+@import "../Theme/variable";
+a {
+  text-decoration: none;
+}
+header {
+  padding: 5px;
+  background-color: transparent;
+  position: absolute;
+  width: 100%;
+  z-index: 999;
+  .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    .logo {
+      img {
+        width: 100%;
+      }
+      animation: fadeIn 1s;
+    }
+    .navbar {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      transform: translateX(50px);
+      gap: 50px;
+      animation: fadeIn 1s;
+      a {
+        @include text($txt-sz-sm, $txt-fw-semiBold, $text-cl-primary);
+        transition: all 0.5s;
+        &:hover {
+          color: $text-cl-secondary;
+        }
+      }
+    }
+    .social {
+      overflow: hidden;
+      width: 25%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      transform: translateX(-50px);
+      animation: fadeIn 1s;
+      .btn-phone {
+        transition: all 0.5s;
+        width: 60%;
+        @include button(
+          $btn-bg-1,
+          15px 20px,
+          none,
+          50px,
+          $txt-sz-sm,
+          $txt-fw-medium,
+          $text-cl-light,
+          $btn-bg-2,
+          $text-cl-secondary
+        );
+      }
+      .icon {
+        a {
+          @include text($txt-sz-base, $txt-fw-semiBold, $text-cl-primary);
+          margin-left: 10px;
+          transition: all 0.5s;
+          &:hover {
+            color: $text-cl-secondary;
+          }
+        }
+      }
+    }
+  }
+}
+.about-us {
+  position: relative;
+  .top-cover-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  .container {
+    .content {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      padding-top: 70px;
+      .content-left {
+        width: 50%;
+        animation: fadeInLeftX 1.75s;
+        .headline {
+          @include text($txt-sz-base, $txt-fw-medium, $text-cl-secondary);
+        }
+        .inner-content {
+          @include text($txt-sz-xl, $txt-fw-bold, $text-cl-primary);
+        }
+      }
+      .content-right {
+        width: 50%;
+        animation: fadeIn 2.5s;
+      }
+    }
+  }
+  .bottom-cover-image {
+    position: absolute;
+    bottom: -40px;
+    left: 0;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+.teacher {
+  background-color: $bg-color-1;
+  background-image: url(/img/Wave_White_bottom_right_shape_01.png);
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  margin-top: 35px;
+  height: 800px;
+  position: relative;
+  .container {
+    .row {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      .col {
+        width: 25%;
+        padding: 15px;
+        transition: all 0.5s;
+
+        .card {
+          transition: all 0.5s;
+          &:hover {
+            box-shadow: 0 30px 30px -10px rgb(0 0 0 / 20%);
+          }
+          .top {
+            overflow: hidden;
+            border-radius: 15px 15px 0 0;
+            img {
+              width: 100%;
+              display: block;
+              transition: all 0.5s;
+              &:hover {
+                transform: scale(1.1);
+              }
+            }
+          }
+          .mid {
+            padding: 27.5px;
+            background-color: $bg-color-2;
+            text-align: center;
+            border-radius: 0 0 15px 15px;
+            .national {
+              @include text($txt-sz-xs, $txt-fw-semiBold, $text-cl-secondary);
+              margin-bottom: 15px;
+            }
+            .name {
+              @include text($txt-sz-md, $txt-fw-bold, $text-cl-primary);
+              margin-bottom: 15px;
+            }
+            .describe {
+              @include text($txt-sz-sm, $txt-fw-medium, $text-cl-primary);
+            }
+          }
+        }
+      }
+      @for $i from 1 through 4 {
+        .col-gr-#{$i} {
+          animation: fadeIn $i * 0.5s;
+        }
+      }
+    }
+  }
+}
+.submit-course {
+  background-image: url("/img/accent_bottom_wave_01.png");
+  background-position: bottom;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  padding-top: 55px;
+  overflow: hidden;
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    overflow: hidden;
+    .content-left {
+      width: 50%;
+      transform: translateX(100px);
+      animation: fadeInLeftX 1s;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    .content-right {
+      width: 50%;
+      transform: translateX(100px);
+      overflow: hidden;
+      animation: fadeIn 1s;
+      .submit-form {
+        overflow: hidden;
+        width: 75%;
+        .submit-box {
+          overflow: hidden;
+          padding: 0 30px 30px 30px;
+          box-shadow: 0 30px 30px -10px rgb(0 0 0 / 20%);
+          border-radius: 15px;
+          background-color: $bg-color-2;
+          width: 400px;
+          .title {
+            text-align: center;
+            @include text($txt-sz-l, $txt-fw-bold, $text-cl-primary);
+            margin-bottom: 50px;
+          }
+          .submit-row {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin: 15px 0;
+            .submit-name {
+              border: 1px solid rgba(0, 0, 0, 0.1);
+              padding: 15px 25px;
+              border-radius: 50px;
+              .icon {
+                @include icon($icon-cl-primary, $txt-sz-xs);
+              }
+              #name {
+                width: 85px;
+                @include input(none, 0 15px, none);
+              }
+            }
+            .submit-email {
+              border: 1px solid rgba(0, 0, 0, 0.1);
+              padding: 15px 25px;
+              border-radius: 50px;
+              margin-left: 30px;
+              .icon {
+                @include icon($icon-cl-primary, $txt-sz-xs);
+              }
+              #email {
+                width: 85px;
+                @include input(none, 0 15px, none);
+              }
+            }
+            .subject-list {
+              border: 1px solid rgba(0, 0, 0, 0.1);
+              padding: 15px 25px;
+              border-radius: 50px;
+              width: 340px;
+              .icon {
+                @include icon($icon-cl-primary, $txt-sz-xs);
+              }
+              #subject {
+                select {
+                  border: none;
+                }
+              }
+            }
+            .message-area {
+              border: 1px solid rgba(0, 0, 0, 0.1);
+              padding: 15px 25px;
+              border-radius: 25px;
+              width: 340px;
+              height: 100px;
+              .icon {
+                // transform: translateY(-62px);
+                @include icon($icon-cl-primary, $txt-sz-xs);
+              }
+              #message {
+                width: 280px;
+                height: auto;
+                transform: translate(25px, -20px);
+                @include input(none, 0 15px, none);
+              }
+            }
+          }
+          .btn-submit {
+            overflow: hidden;
+            margin: 30px 0;
+            transition: all 0.5s;
+            @include button(
+              $btn-bg-1,
+              15px 50px,
+              none,
+              50px,
+              $txt-sz-sm,
+              $txt-fw-medium,
+              $text-cl-light,
+              $btn-bg-2,
+              $text-cl-secondary
+            );
+          }
+        }
+      }
+    }
+  }
+}
+.footer {
+  padding: 150px 0;
+  background-color: $bg-color-3;
+  background-image: url("/img/footer_background.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  .container {
+    .row {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      transform: translateY(-100px);
+      .col {
+        width: 25%;
+        .item {
+          .title {
+            .info {
+              @include text($txt-sz-md, $txt-fw-bold, $text-cl-light);
+            }
+            margin-bottom: 25px;
+          }
+          .content {
+            @include text($txt-sz-sm, $txt-fw-medium, $text-cl-light);
+            p {
+              margin-bottom: 15px;
+              .icon {
+                margin-right: 10px;
+              }
+            }
+            .link {
+              width: 75%;
+
+              padding-bottom: 10px;
+              margin-bottom: 10px;
+              border-bottom: 1px solid #990171;
+              a {
+                @include text($txt-sz-sm, $txt-fw-medium, $text-cl-light);
+              }
+              &:hover {
+                transition: all 0.5s;
+                a {
+                  color: $text-cl-hover-1;
+                }
+              }
+            }
+            .subcribe-form {
+              padding-top: 20px;
+              .sb-email {
+                #email {
+                  @include input(none, 15px 30px, none);
+                  background-color: $bg-color-3;
+                  color: $text-cl-light;
+                  text-align: center;
+                  outline: 1px solid #b31b8b;
+                  border-radius: 50px;
+                  margin-bottom: 10px;
+                  &::placeholder {
+                    color: $text-cl-light;
+                  }
+                  &:focus {
+                    outline: 1px solid #fff;
+                  }
+                }
+              }
+              .btn-submit {
+                transition: all 0.5s;
+                @include button(
+                  $btn-bg-2,
+                  15px 65px,
+                  none,
+                  50px,
+                  $txt-sz-base,
+                  $txt-fw-medium,
+                  $text-cl-primary,
+                  $btn-bg-3,
+                  $text-cl-light,
+                  1px solid $border-cl-2
+                );
+              }
+            }
+          }
+          .social {
+            margin-top: 25px;
+            a {
+              @include text($txt-sz-sm, $txt-fw-medium, $text-cl-light);
+              margin-right: 10px;
+              transition: all 0.5s;
+              &:hover {
+                color: $text-cl-primary;
+              }
+            }
+          }
+        }
+      }
+      @for $i from 1 through 4 {
+        .col-#{$i} {
+          animation: fadeIn $i * 0.5s;
+        }
+      }
+    }
+  }
+}
+// ---------------animation-------------------//
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeInLeftX {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
